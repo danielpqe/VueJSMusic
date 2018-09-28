@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vue Music</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 <body>
     <div id="app">
-        <p>{{ message }}</p>
+        <h2>Elija sus cursos favoritos</h2>
+    <template v-for="curso in cursos">
+    <curso v-bind:curso="curso" v-on:checked="selectCurso"></curso>
+
+    </template>
+        <button type="submit" @click="submit">Enviar</button>
     </div>
     <script src="main.js"></script>
 </body>
